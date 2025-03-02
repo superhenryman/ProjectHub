@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+body {
+    font-family: "Comic Neue", serif;
+    background-color: #a2c2f7;
+}
+.container {
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 20px;
+    text-align: center;
+    color:#3a6a20;
+}
+a {
+    color:#2f352c;
+    text-decoration: none;
+}
+.javascript {
+    align-items: center;
+}
+.credits {
+    text-align: left;
+    display: block;
+    padding:40px;
+    font-size: 20px;
+}
