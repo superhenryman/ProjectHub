@@ -1,31 +1,30 @@
+/* Reset & Base Styles */
 body {
   font-family: "Arial", sans-serif;
   background: linear-gradient(135deg, #1e1e2f, #3a3a5d);
   color: #ecf0f1;
   margin: 0;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  flex-direction: column;
-  min-height: 100vh;
+  padding: 20px;
   text-align: center;
   box-sizing: border-box;
 }
 
+/* Center the main content and credits */
+.container,
+.credits {
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+/* Container Styles */
 .container {
   background: rgba(20, 20, 30, 0.9);
   padding: 30px;
   border-radius: 15px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
   animation: fadeIn 1s ease-in-out;
-  width: 100%;
-  max-width: 400px;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-bottom: 30px; /* Adds space between container and credits */
+  margin-bottom: 30px; /* Space between container and credits */
 }
 
 h1 {
@@ -34,6 +33,7 @@ h1 {
   animation: slideIn 1s ease-in-out;
 }
 
+/* Link Styles */
 a {
   color: #4aa3df;
   text-decoration: none;
@@ -52,60 +52,50 @@ a:hover {
   transform: scale(1.1);
 }
 
+/* Credits Styles */
 .credits {
   background: rgba(0, 0, 0, 0.5);
   padding: 20px;
   border-radius: 15px;
   font-size: 1rem;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-  width: 100%;
-  max-width: 400px;
-  margin-top: 30px; /* Ensure credits are below the container */
 }
 
 .h1-credits {
   font-size: 1.5rem;
 }
 
+/* Animations */
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 @keyframes slideIn {
-  from {
-    transform: translateY(-20px);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
+  from { transform: translateY(-20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
 }
 
+/* Media Queries for Responsiveness */
 @media screen and (max-width: 768px) {
   h1 {
     font-size: 1.8rem;
   }
-
+  
   .container {
     padding: 20px;
   }
-
+  
   a {
     font-size: 1rem;
     padding: 6px 10px;
   }
-
+  
   .credits {
     font-size: 0.9rem;
     margin-top: 20px;
   }
-
+  
   /* Disable hover effect on mobile */
   a:hover {
     transform: none;
@@ -118,16 +108,16 @@ a:hover {
   h1 {
     font-size: 1.5rem;
   }
-
+  
   .container {
     padding: 15px;
   }
-
+  
   a {
     font-size: 0.9rem;
     padding: 5px 10px;
   }
-
+  
   .credits {
     font-size: 0.8rem;
     padding: 8px;
