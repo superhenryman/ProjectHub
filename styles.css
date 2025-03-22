@@ -6,8 +6,9 @@ body {
   padding: 0;
   display: flex;
   justify-content: center;
-  align-items: center;
-  height: 100vh;
+  align-items: flex-start;
+  flex-direction: column;
+  min-height: 100vh;
   text-align: center;
   box-sizing: border-box;
 }
@@ -24,7 +25,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  overflow: hidden;
+  margin-bottom: 30px; /* Adds space between container and credits */
 }
 
 h1 {
@@ -52,15 +53,14 @@ a:hover {
 }
 
 .credits {
-  position: absolute;
-  bottom: 10px; /* Move credits to the bottom */
-  left: 0;
-  width: 100%;
   background: rgba(0, 0, 0, 0.5);
-  padding: 10px;
+  padding: 20px;
   border-radius: 15px;
   font-size: 1rem;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  max-width: 400px;
+  margin-top: 30px; /* Ensure credits are below the container */
 }
 
 .h1-credits {
@@ -103,8 +103,7 @@ a:hover {
 
   .credits {
     font-size: 0.9rem;
-    margin-top: 15px;
-    bottom: 0; /* Ensure credits stay at the bottom */
+    margin-top: 20px;
   }
 
   /* Disable hover effect on mobile */
@@ -117,4 +116,21 @@ a:hover {
 
 @media screen and (max-width: 480px) {
   h1 {
-    font
+    font-size: 1.5rem;
+  }
+
+  .container {
+    padding: 15px;
+  }
+
+  a {
+    font-size: 0.9rem;
+    padding: 5px 10px;
+  }
+
+  .credits {
+    font-size: 0.8rem;
+    padding: 8px;
+    margin-top: 20px;
+  }
+}
