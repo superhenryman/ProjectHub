@@ -9,7 +9,7 @@ body {
   align-items: center;
   height: 100vh;
   text-align: center;
-  box-sizing: border-box;
+  box-sizing: border-box; /* Ensure padding doesn't overflow the container */
 }
 
 .container {
@@ -18,7 +18,8 @@ body {
   border-radius: 15px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
   animation: fadeIn 1s ease-in-out;
-  max-width: 400px;
+  width: 100%;
+  max-width: 400px; /* Limit the width to a maximum value */
 }
 
 h1 {
@@ -94,9 +95,10 @@ a:hover {
   }
 }
 
+/* Media Queries for Responsiveness */
 @media screen and (max-width: 768px) {
   h1 {
-    font-size: 1.8rem; 
+    font-size: 1.8rem; /* Smaller font size for mobile */
   }
 
   .container {
@@ -104,34 +106,48 @@ a:hover {
   }
 
   a {
-    font-size: 1rem; 
-    padding: 6px 10px; 
+    font-size: 1rem; /* Adjust link font size */
+    padding: 6px 10px; /* Smaller padding for links */
   }
 
   .credits {
-    bottom: 10vh;
-    left: 10vw; 
-    font-size: 0.9rem; 
+    bottom: 10vh; /* Move credits higher on the screen */
+    left: 10vw; /* Add some margin from the left side */
+    font-size: 0.9rem; /* Smaller font size for credits */
+  }
+
+  /* Disable hover effect on mobile */
+  a:hover {
+    transform: none;
+    background: rgba(255, 255, 255, 0.1); /* Keep the background the same */
+    color: #4aa3df; /* Keep the original color */
   }
 }
 
 @media screen and (max-width: 480px) {
   h1 {
-    font-size: 1.5rem; 
+    font-size: 1.5rem; /* Further reduce font size for very small screens */
   }
 
   .container {
-    padding: 15px; 
+    padding: 15px; /* Reduce padding for smaller screens */
   }
 
   a {
-    font-size: 0.9rem; 
-    padding: 5px 8px; 
+    font-size: 0.9rem; /* Smaller font size for mobile */
+    padding: 5px 8px; /* Smaller padding for links */
   }
 
   .credits {
-    bottom: 12vh;
-    left: 15vw;
-    font-size: 0.8rem;
+    bottom: 12vh; /* Move credits even higher */
+    left: 15vw; /* Adjust left position */
+    font-size: 0.8rem; /* Even smaller font size for credits */
+  }
+
+  /* Disable hover effect on mobile */
+  a:hover {
+    transform: none;
+    background: rgba(255, 255, 255, 0.1); /* Keep the background the same */
+    color: #4aa3df; /* Keep the original color */
   }
 }
