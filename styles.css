@@ -9,7 +9,7 @@ body {
   align-items: center;
   height: 100vh;
   text-align: center;
-  box-sizing: border-box; /* Ensure padding doesn't overflow the container */
+  box-sizing: border-box;
 }
 
 .container {
@@ -19,8 +19,12 @@ body {
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
   animation: fadeIn 1s ease-in-out;
   width: 100%;
-  max-width: 400px; /* Limit the width to a maximum value */
-  position: relative; /* Make sure the container stays within bounds */
+  max-width: 400px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
 }
 
 h1 {
@@ -49,14 +53,13 @@ a:hover {
 
 .credits {
   position: absolute;
-  bottom: 5vh;
-  left: 0vw;
+  bottom: 10px; /* Move credits to the bottom */
+  left: 0;
+  width: 100%;
   background: rgba(0, 0, 0, 0.5);
-  padding: 10px 15px;
+  padding: 10px;
   border-radius: 15px;
   font-size: 1rem;
-  opacity: 0;
-  animation: slideLeft 1s ease-out 0s 1 normal forwards;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
@@ -84,22 +87,9 @@ a:hover {
   }
 }
 
-@keyframes slideLeft {
-  0% {
-    opacity: 0;
-    transform: translateX(-250px);
-  }
-
-  100% {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-/* Media Queries for Responsiveness */
 @media screen and (max-width: 768px) {
   h1 {
-    font-size: 1.8rem; /* Smaller font size for mobile */
+    font-size: 1.8rem;
   }
 
   .container {
@@ -107,58 +97,24 @@ a:hover {
   }
 
   a {
-    font-size: 1rem; /* Adjust link font size */
-    padding: 6px 10px; /* Smaller padding for links */
+    font-size: 1rem;
+    padding: 6px 10px;
   }
 
   .credits {
-    bottom: 10vh; /* Move credits higher on the screen */
-    left: 10vw; /* Add some margin from the left side */
-    font-size: 0.9rem; /* Smaller font size for credits */
-  }
-
-  /* Disable hover effect on mobile to avoid overlap */
-  a:hover {
-    transform: none;
-    background: rgba(255, 255, 255, 0.1); /* Keep the background the same */
-    color: #4aa3df; /* Keep the original color */
-  }
-
-  /* Prevent overflow on mobile by reducing scale */
-  .container {
-    overflow: hidden; /* Prevent overflow */
-  }
-}
-
-@media screen and (max-width: 480px) {
-  h1 {
-    font-size: 1.5rem; /* Further reduce font size for very small screens */
-  }
-
-  .container {
-    padding: 15px; /* Reduce padding for smaller screens */
-  }
-
-  a {
-    font-size: 0.9rem; /* Smaller font size for mobile */
-    padding: 5px 8px; /* Smaller padding for links */
-  }
-
-  .credits {
-    bottom: 12vh; /* Move credits even higher */
-    left: 15vw; /* Adjust left position */
-    font-size: 0.8rem; /* Even smaller font size for credits */
+    font-size: 0.9rem;
+    margin-top: 15px;
+    bottom: 0; /* Ensure credits stay at the bottom */
   }
 
   /* Disable hover effect on mobile */
   a:hover {
     transform: none;
-    background: rgba(255, 255, 255, 0.1); /* Keep the background the same */
-    color: #4aa3df; /* Keep the original color */
-  }
-
-  /* Prevent overflow on mobile */
-  .container {
-    overflow: hidden; /* Prevent overflow */
+    background: rgba(255, 255, 255, 0.1);
+    color: #4aa3df;
   }
 }
+
+@media screen and (max-width: 480px) {
+  h1 {
+    font
